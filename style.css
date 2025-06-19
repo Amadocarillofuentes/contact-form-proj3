@@ -1,0 +1,149 @@
+:root {
+  --light-green: hsl(148, 38%, 91%);
+  --green: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(186, 15%, 59%);
+  --dark-grey: hsl(187, 24%, 22%);
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: url('./assets/fonts/Karla-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Karla Regular', sans-serif;
+  font-size: 1rem;
+}
+
+body {
+  background-color: var(--light-green);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  min-width: 60%;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+h2, .h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+form {
+  width: calc(100% - 1rem);
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1rem;
+  color: var(--dark-grey);
+}
+
+form h2, form .email, form .query, form .message, form .agree, form input[type=submit]{
+  grid-column: 1 / span 2;
+}
+
+form div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+form input, form textarea, form .option, form input[type=submit] {
+  min-height: 40px;
+  padding: 0.5rem;
+  border: 1px solid var(--green);
+  border-radius: 6px;
+}
+
+form .options {
+  flex-direction: row;
+  gap: 1rem;
+}
+
+form .option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 50%;
+  padding: 0.5rem 1rem;
+}
+
+form .agreement {
+  flex-direction: row;
+  align-items: center;
+}
+
+form input[type=checkbox], form input[type=radio] {
+  accent-color: var(--green);
+}
+
+form input[type=submit] {
+  background-color: var(--dark-grey);
+  color: var(--white);
+  padding: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+form input:hover, form .option:hover  {
+  cursor: pointer;
+}
+
+form .err-msg {
+  font-size: small;
+  color: var(--red);
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+  body{
+    padding: 2rem;
+  }
+
+  .container {
+    max-width: 90%;
+    min-width: 80%;
+  }
+
+  form {
+    width: calc(100% - 1rem);
+    grid-template-columns: 100%;
+  }
+
+  form h2, form .email, form .query, form .message, form .agree, form input[type=submit]{
+    grid-column: 1 ;
+  }
+
+  form .options {
+    flex-direction: column;
+  }
+
+  form .option {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body{
+    padding: 1rem;
+  }
+}

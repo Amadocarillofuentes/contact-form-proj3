@@ -9,44 +9,62 @@
   <title>Frontend Mentor | Contact form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  Contact Us
+  <div class="container">
+    <form id="contact-form">
+        <h2>Contact Us</h2>
+        <div class="first-name">
+          <label for="first-name">First Name *</label>
+          <input type="text" id="first-name">
+          <span class="err-msg hide err-first-name">This field is required</span>
+        </div>
+        <div class="last-name">
+          <label for="last-name">Last Name *</label>
+          <input type="text" id="last-name">
+          <span class="err-msg hide err-last-name">This field is required</span>
+        </div>
+        <div class="email">
+          <label for="email">Email Address *</label>
+          <input type="email" name="email" id="email">
+          <span class="err-msg hide err-email">Please enter a valid email address</span>
+        </div>
+        <div class="query">
+          <label for="query-type">Query Type *</label>
+          <div class="options">
+            <span class="option">
+              <input type="radio" name="query" id="query" value="General Enquiry">General Enquiry
+            </span>
+            <span class="option">
+              <input type="radio" name="query" id="query" value="Support Request">Support Request
+            </span>
+          </div>
+          <span class="err-msg hide err-query">Please selesct a query type</span>
+        </div>
+        <div class="message">
+          <label for="message">Message *</label>
+          <textarea name="message" id="message" rows="8"></textarea>
+          <span class="err-msg hide err-message">This field is required</span>
+        </div>
+        <div class="agree">
+          <div class="agreement">
+            <input type="checkbox" name="agree" id="agree"> I consent to be contacted by the team *
+          </div>
+          <span class="err-msg hide err-agree">To submit this form, please cosent to be contacted</span>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+  </div>
 
-  First Name
-  This field is required
-
-  Last Name
-  This field is required
-
-  Email Address
-  Please enter a valid email address
-  This field is required
-
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
-
-  Message
-  This field is required
-
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
+  <!-- Message Sent!
+  Thanks for completing the form. We'll be in touch soon!-->
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
