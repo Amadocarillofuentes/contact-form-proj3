@@ -1,70 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Contact form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-   <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <title>Frontend Mentor | Contact form</title>
 
-  <div class="container">
-    <form id="contact-form">
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="contact-form">
         <h2>Contact Us</h2>
         <div class="first-name">
-          <label for="first-name">First Name *</label>
-          <input type="text" id="first-name">
-          <span class="err-msg hide err-first-name">This field is required</span>
+          <label for="first-name">First Name <span class="star">*</span></label>
+          <input type="text" id="first-name" />
+          <span class="err-msg hide first-name">This field is required</span>
         </div>
         <div class="last-name">
-          <label for="last-name">Last Name *</label>
-          <input type="text" id="last-name">
-          <span class="err-msg hide err-last-name">This field is required</span>
+          <label for="last-name">Last Name <span class="star">*</span></label>
+          <input type="text" id="last-name" />
+          <span class="err-msg hide last-name">This field is required</span>
         </div>
         <div class="email">
-          <label for="email">Email Address *</label>
-          <input type="email" name="email" id="email">
-          <span class="err-msg hide err-email">Please enter a valid email address</span>
+          <label for="email">Email Address <span class="star">*</span></label>
+          <input type="email" name="email" id="email" />
+          <span class="err-msg hide email"
+            >Please enter a valid email address</span
+          >
         </div>
         <div class="query">
-          <label for="query-type">Query Type *</label>
+          <label for="query-type">Query Type <span class="star">*</span></label>
           <div class="options">
             <span class="option">
-              <input type="radio" name="query" id="query" value="General Enquiry">General Enquiry
+              <input
+                type="radio"
+                name="query"
+                id="query"
+                value="General Enquiry"
+                onclick="changeBg(this)"
+              />General Enquiry
             </span>
             <span class="option">
-              <input type="radio" name="query" id="query" value="Support Request">Support Request
+              <input
+                type="radio"
+                name="query"
+                id="query"
+                value="Support Request"
+                onclick="changeBg(this)"
+              />Support Request
             </span>
           </div>
-          <span class="err-msg hide err-query">Please selesct a query type</span>
+          <span class="err-msg hide query">Please selesct a query type</span>
         </div>
         <div class="message">
-          <label for="message">Message *</label>
+          <label for="message">Message <span class="star">*</span></label>
           <textarea name="message" id="message" rows="8"></textarea>
-          <span class="err-msg hide err-message">This field is required</span>
+          <span class="err-msg hide message">This field is required</span>
         </div>
         <div class="agree">
           <div class="agreement">
-            <input type="checkbox" name="agree" id="agree"> I consent to be contacted by the team *
+            <input type="checkbox" name="agree" id="agree" /> I consent to be
+            contacted by the team <span class="star">*</span>
           </div>
-          <span class="err-msg hide err-agree">To submit this form, please cosent to be contacted</span>
+          <span class="err-msg hide agree"
+            >To submit this form, please cosent to be contacted</span
+          >
         </div>
-        <input type="submit" value="Submit">
-    </form>
-  </div>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
 
-  <!-- Message Sent!
+    <div class="success-msg">
+      <div id="success-msg-img-box">
+        <img src="./assets/images/icon-success-check.svg" alt="tick" />
+        <h3>Message Sent!</h3>
+      </div>
+      <p id="success-msg-txt">Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+
+    <!-- Message Sent!
   Thanks for completing the form. We'll be in touch soon!-->
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -8,27 +8,32 @@
 }
 
 @font-face {
-  font-family: 'Karla';
-  src: url('./assets/fonts/Karla-VariableFont_wght.ttf') format('truetype');
+  font-family: "Karla";
+  src: url("./assets/fonts/Karla-VariableFont_wght.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Karla Regular', sans-serif;
+  font-family: "Karla Regular", sans-serif;
   font-size: 1rem;
 }
 
 body {
   background-color: var(--light-green);
-  padding: 4rem;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
 }
 
 .container {
@@ -40,7 +45,12 @@ body {
   padding: 2rem;
 }
 
-h2, .h2 {
+.star {
+  color: var(--green);
+}
+
+h2,
+.h2 {
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -53,7 +63,12 @@ form {
   color: var(--dark-grey);
 }
 
-form h2, form .email, form .query, form .message, form .agree, form input[type=submit]{
+form h2,
+form .email,
+form .query,
+form .message,
+form .agree,
+form input[type="submit"] {
   grid-column: 1 / span 2;
 }
 
@@ -64,11 +79,21 @@ form div {
   gap: 0.5rem;
 }
 
-form input, form textarea, form .option, form input[type=submit] {
+form input,
+form textarea,
+form .option,
+form input[type="submit"] {
   min-height: 40px;
   padding: 0.5rem;
-  border: 1px solid var(--green);
+  border: 1px solid var(--light-grey);
   border-radius: 6px;
+}
+
+:where(#first-name, #last-name, #email, form textarea):hover,
+:where(#first-name, #last-name, #email, form textarea):focus-visible {
+  outline: none;
+  border: 1px solid transparent;
+  box-shadow: 0 0 0 2px var(--green);
 }
 
 form .options {
@@ -89,20 +114,31 @@ form .agreement {
   align-items: center;
 }
 
-form input[type=checkbox], form input[type=radio] {
+form input[type="checkbox"],
+form input[type="radio"] {
   accent-color: var(--green);
 }
 
-form input[type=submit] {
-  background-color: var(--dark-grey);
+form input[type="submit"] {
+  background-color: var(--green);
   color: var(--white);
   padding: 1rem;
   font-weight: 600;
   letter-spacing: 1px;
 }
 
-form input:hover, form .option:hover  {
+form input[type="submit"]:hover {
+  background-color: #063f36;
+}
+
+form input:hover,
+form .option:hover {
   cursor: pointer;
+}
+
+form input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--white) inset !important;
+  background-color: white !important;
 }
 
 form .err-msg {
@@ -114,14 +150,60 @@ form .err-msg {
   display: none;
 }
 
+.success-msg {
+  background-color: var(--dark-grey);
+  padding: 1.5rem;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.5);
+}
+
+.active-animation {
+  animation: pop 3s ease-in 1;
+}
+
+@keyframes pop {
+  30% {
+    top: 3%;
+    transform: translateX(-50%) scale(1);
+  }
+
+  90% {
+    top: 3%;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.success-msg div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.success-msg p {
+  color: rgba(255, 255, 255, 0.651);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.attribution {
+  text-align: center;
+}
+
 @media screen and (max-width: 640px) {
-  body{
-    padding: 2rem;
+  body {
+    height: auto;
+    padding: 2rem 0rem;
   }
 
   .container {
     max-width: 90%;
     min-width: 80%;
+    border-radius: 1rem;
   }
 
   form {
@@ -129,8 +211,13 @@ form .err-msg {
     grid-template-columns: 100%;
   }
 
-  form h2, form .email, form .query, form .message, form .agree, form input[type=submit]{
-    grid-column: 1 ;
+  form h2,
+  form .email,
+  form .query,
+  form .message,
+  form .agree,
+  form input[type="submit"] {
+    grid-column: 1;
   }
 
   form .options {
@@ -142,8 +229,9 @@ form .err-msg {
   }
 }
 
-@media screen and (max-width: 480px) {
-  body{
-    padding: 1rem;
+@media screen and (max-width: 320px) {
+  body {
+    height: auto;
+    padding: 1rem 0rem;
   }
 }
