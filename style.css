@@ -227,6 +227,18 @@ form .err-msg {
   form .option {
     width: 100%;
   }
+
+  @keyframes pop {
+    30% {
+      top: 40%;
+      transform: translateX(-50%) scale(1);
+    }
+
+    90% {
+      top: 40%;
+      transform: translateX(-50%) scale(1);
+    }
+  }
 }
 
 @media screen and (max-width: 320px) {
